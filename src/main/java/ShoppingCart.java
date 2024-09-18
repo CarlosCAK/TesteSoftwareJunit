@@ -16,12 +16,8 @@ public class ShoppingCart {
     }
 
     public double calculateTotal(){
-        double soma = 0;
 
-        for(Item item : this.itens){
-            soma += item.getPreco();
-        }
-        return  soma;
+        return  this.itens.stream().mapToDouble(Item ::getPreco).sum();
     }
 
 
